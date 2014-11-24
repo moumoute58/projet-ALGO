@@ -1,0 +1,86 @@
+unit unitJeu;
+
+interface
+procedure stat(pv : Integer);
+procedure menu();
+procedure maison(KnowStart : Boolean = FALSE);
+procedure loadGame();
+procedure coffre();
+procedure foret();
+procedure mine();
+procedure save();
+
+
+implementation
+procedure stat(pv : Integer);
+begin
+
+end;
+procedure coffre();
+begin
+
+end;
+
+procedure foret();
+begin
+
+end;
+procedure mine();
+begin
+
+end;   // fin procédure
+
+procedure save();
+begin
+
+end;
+procedure maison(KnowStart : Boolean);
+var
+  choixMaison : Integer; // contient le choix du joueur dans la maison (dormir, coffre, forêt, mine)
+begin
+  if KnowStart = TRUE then
+  begin
+    writeln('test');{mettre un texte a la con d'intro}
+  end;
+  writeln('Vous êtes chez vous que voulez vous faire');
+  writeln('tapez 1 pour dormir');
+  writeln('tapez 2 pour regarder dans votre coffre');
+  writeln('tapez 3 pour aller dans la forêt');
+  writeln('tapez 4 pour aller à la mine');
+  writeln('tapez 5 pour sauvegarder');
+  writeln('tapez 6 pour quitter');
+  readln(choixMaison);
+  case choixMaison of
+  1:begin
+      stat(100);
+      writeln('vous avez bien dormi vous récupérez tout vos PV');
+      readln;
+      maison();
+    end;
+  2: coffre();
+  3: foret();
+  4: mine();
+  5: save();
+  6: exit;
+  end;
+end;
+procedure loadGame();
+begin
+
+end;
+procedure menu();
+var
+  choixMenu : Integer; // variable qui contient le choix du joueur dans le menu(commmencer, continuer, quitter)
+begin
+  writeln('Bienvenue');
+  writeln('tapez 1 pour commencer une nouvelle partie');
+  writeln('tapez 2 pour continuer une partie');
+  writeln('tapez 3 pour quitter');
+  readln(choixMenu);
+  case choixMenu of
+    1: maison(TRUE);
+    2: loadGame();
+    3: exit;
+  end;
+end;
+end.
