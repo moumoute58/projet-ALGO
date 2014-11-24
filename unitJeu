@@ -13,10 +13,18 @@ procedure mine();
 procedure miner();
 procedure combat(adversaire : String);
 procedure save();
+procedure aleaCombat(proba : Integer);
 
 
 
 implementation
+procedure aleaCombat(proba : Integer);
+var
+  aleaFight : Integer ;
+begin
+  randomize;
+  aleaFight:=random(proba);
+end;
 procedure stat(pv : Integer);
 begin
 
