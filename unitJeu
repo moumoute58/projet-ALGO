@@ -7,8 +7,13 @@ procedure maison(KnowStart : Boolean = FALSE);
 procedure loadGame();
 procedure coffre();
 procedure foret();
+procedure couperBois();
+procedure marchand();
 procedure mine();
+procedure miner();
+procedure combat(adversaire : String);
 procedure save();
+
 
 
 implementation
@@ -22,14 +27,68 @@ begin
 end;
 
 procedure foret();
+
+var
+  choixForet : Integer;
+begin
+  writeln('vous venez d''entrer dans la foret');
+  writeln('taper 1 pour aller couper du bois');
+  writeln('taper 2 pour aller voir le marchand');
+  writeln('taper 3 pour aller combattre le mechant pedobear qui vous regarde d''un air pervers, caché derrière un arbre');
+  writeln('tapez 4 pour aller à la mine');
+  writeln('tapez 5 pour retourner dans votre maison');
+  writeln('tapez 6 pour sauvegarder');
+  writeln('tapez 7 pour quitter');
+  readln(choixForet);
+  case choixForet of
+  1: couperBois();
+  2: marchand();
+  3: combat('Pedobear');
+  4: mine();
+  5: maison();
+  6: save();
+  7: exit;
+  end;
+end;
+procedure couperBois();
+begin
+
+end;
+procedure marchand();
+begin
+
+end;
+procedure combat(adversaire : String);
 begin
 
 end;
 procedure mine();
+var
+  repmine : Integer;
 begin
+  writeln('apres des heures et des heures de marche vous arrivez enfin a la mine ');
+  writeln('Que voulez-vous faire ?');
+  writeln('tapez 1 pour miner');
+  writeln('tapez 2 pour défiez le gros dragon qui vie au fond de la mine');
+  writeln('tapez 3 pour retourner dans votre maison');
+  writeln('tapez 4 pour aller dans la forêt');
+  writeln('tapez 5 pour sauvegarder');
+  writeln('tapez 6 pour quitter');
+  readln(repmine);
+  case repmine of
+  1: miner();
+  2: combat('Dragon');
+  3: maison();
+  4: foret();
+  5: save();
+  6: exit;
+  end;
 
 end;   // fin procédure
+procedure miner();
+begin
 
+end;
 procedure save();
 begin
 
